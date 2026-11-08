@@ -1,0 +1,10 @@
+.git
+.venv
+.uv-cache
+__pycache__
+models
+benchmark-results
+*.pyc
+*.log
+.env
+secrets*.yaml

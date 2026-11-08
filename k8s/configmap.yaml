@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: inference-config
+data:
+  HF_MODEL_ID: Qwen/Qwen2.5-0.5B-Instruct
+  HF_REVISION: 7ae557604adf67be50417f59c2c2f167def9a775
+  VLLM_DTYPE: bfloat16
+  VLLM_MAX_MODEL_LEN: "1024"
+  VLLM_MAX_NUM_SEQS: "1"
+  VLLM_MAX_NUM_BATCHED_TOKENS: "1024"
+  VLLM_CPU_KVCACHE_SPACE: "1"
+  VLLM_CPU_NUM_OF_RESERVED_CPU: "1"
+  VLLM_LOGGING_LEVEL: WARNING

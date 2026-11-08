@@ -1,0 +1,10 @@
+.venv/
+.uv-cache/
+__pycache__/
+.pytest_cache/
+*.pyc
+.env
+*.log
+models/
+benchmark-results/
+secrets*.yaml

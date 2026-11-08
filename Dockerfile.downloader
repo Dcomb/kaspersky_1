@@ -1,0 +1,15 @@
+FROM python:3.12-slim-bookworm
+
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 HF_HOME=/tmp/huggingface
+
+RUN groupadd --gid 6767 app && useradd --uid 6767 --gid 6767 --create-home app \
+    && mkdir -p /opt/downloader /models /tmp/huggingface \
+    && chown -R app:app /opt/downloader /models /tmp/huggingface
+
+WORKDIR /opt/downloader
+COPY requirements-downloader.txt ./
+RUN python -m pip install --no-cache-dir -r requirements-downloader.txt
+COPY --chown=app:app scripts/download_model.py ./download_model.py
+
+USER 6767:6767
+CMD ["python", "/opt/downloader/download_model.py"]

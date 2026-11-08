@@ -1,0 +1,4 @@
+# Обязательная CPU-сборка vLLM 0.27.0 для Linux x86_64.
+vllm @ https://github.com/vllm-project/vllm/releases/download/v0.27.0/vllm-0.27.0+cpu-cp38-abi3-manylinux_2_34_x86_64.whl
+torch==2.13.0+cpu
+transformers==5.13.0
