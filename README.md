@@ -151,5 +151,3 @@ uv pip compile requirements-downloader.in --python-version 3.12 --python-platfor
 ```
 
 URL CPU-колеса vLLM в `requirements.in` закрепляет релиз 0.27.0. После изменения зависимостей пересоберите и проверьте оба образа. Service имеет тип `ClusterIP`. `port-forward` нужен для локального доступа. Для публичного доступа понадобятся TLS-прокси или Ingress и сетевые ограничения кластера. Маршрут `/health` открыт для Kubernetes-проб. Остальные маршруты требуют API-токен. Kubernetes Secrets могут храниться на диске без шифрования, если в кластере не настроено encryption at rest. Не добавляйте файлы токенов в Git и ограничьте доступ к кластеру.
-
-Документация: [установка vLLM на CPU](https://docs.vllm.ai/en/v0.27.0/getting_started/installation/cpu/), [параметры `vllm serve`](https://docs.vllm.ai/en/v0.27.0/cli/serve/), [скачивание snapshot из Hugging Face](https://huggingface.co/docs/huggingface_hub/en/guides/download), [Security Context в Kubernetes](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/).
